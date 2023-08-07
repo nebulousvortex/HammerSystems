@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Проверка кода</title>
+</head>
+<body>
+  <h1>Проверка кода</h1>
+
+  {% if messages %}
+    {% for message in messages %}
+      <p class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+
+  <form method="post" action="{% url 'check_code' %}">
+    {% csrf_token %}
+    <input type="text" name="code" placeholder="Введите код">
+    <button type="submit">Проверить код</button>
+  </form>
+</body>
+</html>

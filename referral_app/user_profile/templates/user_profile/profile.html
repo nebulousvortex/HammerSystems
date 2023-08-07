@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Профиль пользователя</title>
+</head>
+<body>
+  <h1><b>Профиль</b></h1>
+
+  <p><b>Телефонный номер:</b> {{ user.phone_number }}</p>
+
+  <p><b>Реферальный код:</b> {{ user.referral_code }}</p>
+
+  {% if user.invite_code %}
+    <p><b>Код приглашения:</b> {{ user.invite_code }}</p>
+
+  {% else %}
+    <form method="POST" action="{% url 'save_invite_code' %}">
+      {% csrf_token %}
+      <label for="invite_code">Введите код приглашения:</label>
+      <input type="text" id="invite_code" name="invite_code">
+      <button type="submit">Сохранить</button>
+    </form>
+  {% endif %}
+  {% if messages %}
+      {% for message in messages %}
+        <p class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+</body>
+</html>

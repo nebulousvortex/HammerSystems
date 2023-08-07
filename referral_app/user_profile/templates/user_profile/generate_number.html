@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ввод номера</title>
+</head>
+<body>
+  <h1>Ввод номера</h1>
+
+  {% if messages %}
+    {% for message in messages %}
+      <p class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+
+  <form method="post" action="{% url 'generate_number' %}">
+    {% csrf_token %}
+    <input type="text" name="phone_number" placeholder="Введите номер">
+    <button type="submit">Сгенерировать код</button>
+  </form>
+</body>
+</html>
