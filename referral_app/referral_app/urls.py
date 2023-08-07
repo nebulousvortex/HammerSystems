@@ -13,7 +13,7 @@ urlpatterns = [
     path('api/v1/create_profile/', UserCreateAPIView.as_view(), name='create'),
     path('api/v1/update_profile/<str:phone_number>/', UserUpdateAPIView.as_view(), name='update'),
     # Страницы
-    path('generate/', generate_number, name='generate_number'),
+    path('', generate_number, name='generate_number'),
     path('check/', check_code, name='check_code'),
     path('profile/<str:phone_number>/', profile, name='profile'),
     path('save_invite_code/', save_invite_code, name='save_invite_code'),
