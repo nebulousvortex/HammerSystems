@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "19d65963-c76b-4152-aab0-950584a0e464",
+		"name": "TestTaskCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28263377"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone_number",
+							"value": "85009696053",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://nebulousvortex.pythonanywhere.com//api/v1/profile/",
+					"protocol": "http",
+					"host": [
+						"nebulousvortex",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"",
+						"api",
+						"v1",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://nebulousvortex.pythonanywhere.com//api/v1/profile/89009696053/",
+					"protocol": "http",
+					"host": [
+						"nebulousvortex",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"",
+						"api",
+						"v1",
+						"profile",
+						"89009696053",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPhones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://nebulousvortex.pythonanywhere.com/api/v1/create_profile/",
+					"protocol": "http",
+					"host": [
+						"nebulousvortex",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create_profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone_number",
+							"value": "88009696053",
+							"description": "Телефонный номер в формате Z-YYY-XXX-XX-XX",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://nebulousvortex.pythonanywhere.com/api/v1/create_profile/?phone_number=88009696053",
+					"protocol": "http",
+					"host": [
+						"nebulousvortex",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create_profile",
+						""
+					],
+					"query": [
+						{
+							"key": "phone_number",
+							"value": "88009696053"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddInviteCode",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invite_code",
+							"value": "W0YDF5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://nebulousvortex.pythonanywhere.com/api/v1/update_profile/88009696053/",
+					"protocol": "http",
+					"host": [
+						"nebulousvortex",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"update_profile",
+						"88009696053",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
